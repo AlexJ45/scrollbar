@@ -1,0 +1,34 @@
+.scrollbar-wrapper {
+  position: absolute;
+  right: 3%;
+  top: 0;
+}
+.scrollbar {
+  background-color: var(--scrollbar-background);
+  height: 80%;
+  width: 8px;
+  border-radius: 20px;
+  position: fixed;
+}
+.scrollbar__visualizer {
+  border-radius: 20px;
+  animation-name: growAndColorChange;
+  animation-timeline: --scrollBar;
+  animation-duration: 1ms;
+  transition: ease-in-out;
+}
+
+@keyframes growAndColorChange {
+  0% {
+    height: 0;
+    background-color: oklch(62.35% 0.276 29.2338851923426);
+  }
+  50% {
+    height: 50%;
+    background-color: oklch(88.24% 0.197 97.41);
+  }
+  100% {
+    height: 100%;
+    background-color: oklch(75.29% 0.332 145.06);
+  }
+}

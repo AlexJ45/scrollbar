@@ -1,0 +1,55 @@
+@import url("reset.css");
+@import url("scrollbar.css");
+@import url("./../fonts/inconsolata/inconsolata.css");
+@import url("./../fonts/librebarcode128/librebarcode128.css");
+
+:root {
+  --inconsolata: "Inconsolata";
+  --barcode: "Libre Barcode 128";
+  --gray: oklch(16.84% 0 0);
+  --scrollbar-background: oklch(22.64% 0 0);
+  --white-font: oklch(100% 0 0);
+  --horizontal-p: 3rem;
+  --vertical-p: 2rem;
+  font-family: var(--inconsolata);
+}
+.hidden {
+  visibility: collapse !important;
+}
+
+body {
+  background-color: var(--gray);
+  color: var(--white-font);
+  font-size: 2rem;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--horizontal-p);
+}
+
+.codebar-title {
+  font-family: var(--barcode);
+}
+
+.menu {
+  display: flex;
+  justify-content: auto;
+  width: 100%;
+}
+.content {
+  width: 100%;
+  overflow-y: scroll;
+  height: 100%;
+  padding: 12px var(--horizontal-p);
+  scroll-timeline: --scrollBar y;
+  scroll-timeline: --scrollBar vertical;
+  position: relative;
+}
+.text {
+  width: 100%;
+  font-size: 1rem;
+  height: 100000px;
+}
