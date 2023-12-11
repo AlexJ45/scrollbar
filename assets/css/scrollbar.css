@@ -1,7 +1,23 @@
+.info-oklch {
+  font-size: 1rem;
+}
+.button--toggle {
+  padding: 0.5rem 1rem;
+  background: none;
+  color: white;
+  border: 1px solid white;
+  font-size: 1rem;
+  font-weight: 400;
+  word-wrap: break-word;
+}
 .scrollbar-wrapper {
   position: absolute;
   right: 3%;
+  transition: all 0.3s ease-in-out;
   top: 0;
+}
+.scrollbar-wrapper.inactive {
+  right: -3%;
 }
 .scrollbar {
   background-color: var(--scrollbar-background);
@@ -16,15 +32,14 @@
   animation-timeline: --scrollBar;
   animation-duration: 1ms;
   transition: ease-in-out;
+  background-color: white;
 }
-
 @keyframes growAndColorChange {
   0% {
     height: 0;
     background-color: oklch(62.35% 0.276 29.2338851923426);
   }
   50% {
-    height: 50%;
     background-color: oklch(88.24% 0.197 97.41);
   }
   100% {
