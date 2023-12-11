@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="./assets/css/main.css" />
     <script src="assets/scripts/scrollbar.js" defer></script>
     <script src="https://colorjs.io/dist/color.global.js"></script>
-    
   </head>
   <body>
     <header class="menu">
@@ -16,7 +15,9 @@
       <h1 class="codebar-title">CODE BAR</h1>
       <div class="buttons">
         <toggle-button></toggle-button>
-        <button class="button--install" style="display: none">Install PWA</button>
+        <button class="button--install" style="display: none">
+          Install PWA
+        </button>
       </div>
     </header>
     <main class="content">
@@ -52,20 +53,25 @@
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker
           .register("/service-worker.js")
-          .then(registration => {
-            console.log("Service Worker registered with scope:", registration.scope);
+          .then((registration) => {
+            console.log(
+              "Service Worker registered with scope:",
+              registration.scope
+            );
           })
-          .catch(error => {
+          .catch((error) => {
             console.error("Service Worker registration failed:", error);
           });
       }
 
-      window.addEventListener("beforeinstallprompt", event => {
-        document.getElementById("installButton").style.display = "block";
-        document.getElementById("installButton").addEventListener("click", () => {
-          event.prompt();
-          document.getElementById("installButton").style.display = "none";
-        });
+      window.addEventListener("beforeinstallprompt", (event) => {
+        document.querySelector(".button--install").style.display = "block";
+        document
+          .querySelector(".button--install")
+          .addEventListener("click", () => {
+            event.prompt();
+            document.querySelector(".button--install").style.display = "none";
+          });
       });
     </script>
   </body>
