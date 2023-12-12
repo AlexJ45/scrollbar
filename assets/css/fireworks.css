@@ -1,0 +1,44 @@
+.fireworks {
+  animation-name: fireworksAppear;
+  animation-timeline: --scrollBar;
+  animation-duration: 1ms;
+  transition: ease-in-out;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+}
+
+.firework {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 10px solid;
+  animation: explode ease-in-out infinite;
+  animation-fill-mode: forwards;
+}
+
+@keyframes explode {
+  0% {
+    transform: translateY(0) translateX(var(--firework-translate-x, 0));
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh)
+      translateX(var(--firework-translate-x-after, 0));
+    opacity: 0;
+  }
+}
+@keyframes fireworksAppear {
+  0% {
+    opacity: 0;
+  }
+  96% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}

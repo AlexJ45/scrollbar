@@ -1,5 +1,6 @@
 @import url("reset.css");
 @import url("scrollbar.css");
+@import url("fireworks.css");
 @import url("./../fonts/inconsolata/inconsolata.css");
 @import url("./../fonts/librebarcode128/librebarcode128.css");
 
@@ -44,6 +45,7 @@ body {
 }
 .content {
   width: 100%;
+  overflow-x: hidden;
   overflow-y: scroll;
   height: 100%;
   padding: 12px var(--horizontal-p);
@@ -54,5 +56,117 @@ body {
 .text {
   width: 100%;
   font-size: 1rem;
-  height: 100000px;
+  display: flex;
+  gap: 5rem;
+  flex-direction: column;
+  line-height: 2rem;
+  padding: 2rem 0;
+  position: relative;
+}
+.text p:nth-child(odd) {
+  text-align: left;
+}
+
+.text p:nth-child(even) {
+  text-align: right;
+}
+.text p:last-of-type {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+a {
+  text-align: center;
+  color: var(--white-font);
+  text-decoration: underline;
+}
+a:hover {
+  color: rgb(71, 39, 213);
+}
+.flower {
+  animation-name: flowerChange;
+  animation-timeline: --scrollBar;
+  animation-duration: 1ms;
+  transition: ease-in-out;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+  position: absolute;
+  top: 20%;
+  left: -5%;
+  z-index: -1;
+}
+.flower div {
+  width: 75px;
+  height: 75px;
+  border: 8px solid;
+  border-radius: 20px;
+}
+.circle {
+  animation-timeline: --scrollBar;
+  animation-duration: 1ms;
+  transition: ease-in-out;
+  position: absolute;
+  height: 75px;
+  width: 75px;
+  border: 8px solid;
+  z-index: -1;
+  border-radius: 100px;
+}
+.first {
+  animation-name: circleChange1;
+  top: 50%;
+  right: 0;
+}
+.second {
+  animation-name: circleChange2;
+  top: 65%;
+  left: -50%;
+}
+
+@keyframes circleChange2 {
+  70% {
+    height: 75px;
+    width: 75px;
+  }
+  85% {
+    height: 75px;
+    width: 150%;
+  }
+}
+@keyframes circleChange1 {
+  0% {
+    height: 200px;
+    width: 200px;
+  }
+
+  50% {
+    height: 200px;
+    width: 200px;
+  }
+  55% {
+    height: 75px;
+    width: 75px;
+  }
+  70% {
+    height: 75px;
+    width: 150%;
+  }
+}
+@keyframes flowerChange {
+  0% {
+    transform: rotate(50deg);
+    grid-column-gap: 3rem;
+    grid-row-gap: 3rem;
+  }
+  24% {
+    grid-column-gap: 0;
+  }
+  25% {
+    grid-row-gap: 0;
+    transform: rotate(130deg);
+  }
 }

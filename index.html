@@ -7,11 +7,12 @@
     <link rel="manifest" href="/manifest.json" />
     <link rel="stylesheet" href="./assets/css/main.css" />
     <script src="assets/scripts/scrollbar.js" defer></script>
+    <script src="assets/scripts/fireworks.js" defer></script>
     <script src="https://colorjs.io/dist/color.global.js"></script>
   </head>
   <body>
     <header class="menu">
-      <info-oklch class="info-oklch"></info-oklch>
+      <info-oklch class="info-oklch element-oklch"></info-oklch>
       <h1 class="codebar-title">CODE BAR</h1>
       <div class="buttons">
         <toggle-button></toggle-button>
@@ -22,32 +23,84 @@
     </header>
     <main class="content">
       <scrollbar-wrapper class="scrollbar-wrapper inactive"></scrollbar-wrapper>
-      <p class="text">
-        Regardez la barre de progression à droite, elle indique visuellement
-        votre position pendant le défilement de ce texte. C'est une animation
-        déclenchée au scroll ou CSS scroll-driven animations, elle peuvent être
-        exploités pour créer des animations spécifiques en réponse au défilement
-        de ce texte.<br /><br />
+      <article class="text">
+        <div class="flower element-oklch">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="circle first element-oklch"></div>
+        <div class="circle second element-oklch"></div>
+        <div class="fireworks"></div>
+        <p>
+          Bienvenue dans cette exploration captivante des animations basées sur
+          le défilement et des CSS scroll-driven. Plongeons ensemble dans les
+          mécanismes de la propriété scroll-timeline, où chaque pourcentage de
+          défilement devient un marqueur pour des transformations dynamiques.
+        </p>
+        <p>
+          Suivez la barre de progression à droite avec anticipation mais aussi
+          les élément graphiques, car à chaque étape, des changements
+          saisissants se produiront. Découvrons comment ces CSS scroll-driven
+          animations peuvent transcender le traditionnel défilement de page,
+          offrant une expérience utilisateur interactive et engageante.
+        </p>
+        <p>
+          Si vous souhaitez profiter de l'application dans toute ces couleurs
+          cliquez sur le bouton "Activer" Regardez la barre de progression à
+          droite, elle indique visuellement votre position pendant le défilement
+          de ce texte. C'est une animation déclenchée au scroll ou CSS
+          scroll-driven animations, elle peuvent être exploités pour créer des
+          animations spécifiques en réponse au défilement de ce texte.
+        </p>
+        <p>
+          En utilisant la propriété scroll-timeline, les développeurs peuvent
+          définir des marqueurs de pourcentage du défilement total d'un
+          conteneur. Par exemple, une animation peut être déclenchée lorsque
+          l'utilisateur atteint 20% de texte, une autre à 50%, et ainsi de
+          suite.
+        </p>
+        <p>
+          Le module d'animations déclenchées par le défilement en CSS permet
+          d'animer des éléments en réaction au défilement d'une page. Deux types
+          de chronologies sont utilisés : le défilement direct et la visibilité
+          de l'élément. Ces animations peuvent être contrôlées avec des
+          propriétés telles que animation-timeline et scroll-timeline.
+        </p>
+        <p>
+          Prenons un exemple concret : à mesure que vous faites défiler ce texte
+          et que la barre de progression grandit elle change de couleur, elle
+          peut aussi changer de forme. En continuant à faire défiler et lorsque
+          la barre atteint 50%, une transition peut modifier les propriétés d'un
+          autre élément.
+        </p>
+        <p>
+          Ces animations réagissent dynamiquement au défilement de la page,
+          offrant une expérience utilisateur interactive et captivante. En
+          résumé, les CSS scroll-driven animations, associées au
+          scroll-timeline, permettent de concevoir des sites web où le
+          défilement de la page déclenche des animations spécifiques en fonction
+          de la position de l'utilisateur, offrant ainsi une expérience
+          utilisateur plus immersive et engageante tout cela de manière native !
+        </p>
+        <p>
+          Félicitations pour avoir exploré les animations basées sur le
+          défilement et les CSS scroll-driven ! Si vous souhaitez en savoir plus
+          cliquez ici :
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll-driven_animations"
+            target="_blank"
+            >Plus d'informations sur les CSS scroll-driven animations.</a
+          >
 
-        En utilisant la propriété scroll-timeline, les développeurs peuvent
-        définir des marqueurs de pourcentage du défilement total d'un conteneur.
-        Par exemple, une animation peut être déclenchée lorsque l'utilisateur
-        atteint 20% de texte, une autre à 25%, et ainsi de suite. <br /><br />
-
-        Prenons un exemple concret : à mesure que vous faites défiler ce texte
-        et que la barre de progression grandit elle change de couleur, elle peut
-        aussi changer de forme. En continuant à faire défiler et lorsque la
-        barre atteint 50%, une transition peut modifier les propriétés d'un
-        autre élément.<br /><br />
-
-        Ces animations réagissent dynamiquement au défilement de la page,
-        offrant une expérience utilisateur interactive et captivante. En résumé,
-        les CSS scroll-driven animations, associées au scroll-timeline,
-        permettent de concevoir des sites web où le défilement de la page
-        déclenche des animations spécifiques en fonction de la position de
-        l'utilisateur, offrant ainsi une expérience utilisateur plus immersive
-        et engageante tout cela de manière native !
-      </p>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch"
+            target="_blank"
+            >Plus d'informations sur le oklch.</a
+          >
+        </p>
+      </article>
     </main>
     <script>
       if ("serviceWorker" in navigator) {

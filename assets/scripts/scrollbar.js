@@ -11,16 +11,16 @@ class ScrollbarWrapper extends HTMLElement {
 class InfoOklch extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-      L: <span class="oklch-l"></span><br>
-      C: <span class="oklch-c"></span><br>
-      H: <span class="oklch-h"></span>
+      L: <span class="oklch-l">100%</span><br>
+      C: <span class="oklch-c">0</span><br>
+      H: <span class="oklch-h">0</span>
     `;
   }
 }
 
 class ToggleButton extends HTMLElement {
   connectedCallback() {
-    this.innerHTML = `<button class="button--toggle">Activer</button>`;
+    this.innerHTML = `<button class="button--toggle ">Activer</button>`;
   }
 }
 
@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const oklchC = document.querySelector(".oklch-c");
   const oklchH = document.querySelector(".oklch-h");
   const toggleButton = document.querySelector(".button--toggle");
+  const oklchElement = document.querySelectorAll(".element-oklch");
 
   function changeOklchVal() {
     if (!wrapper.classList.contains("inactive")) {
@@ -47,23 +48,27 @@ document.addEventListener("DOMContentLoaded", () => {
       oklchL.textContent = `${Math.floor(colorOklch.oklch[0] * 100)}%`;
       oklchC.textContent = `${colorOklch.oklch[1].toFixed(2)}`;
       oklchH.textContent = `${colorOklch.oklch[2].toFixed(2)}`;
-
-      oklchInfo.style.color = colorOklch;
+      oklchElement.forEach((element) => {
+        element.style.color = colorOklch;
+      });
       toggleButton.style.backgroundColor = colorOklch;
       toggleButton.style.border = colorOklch;
     } else {
-      oklchInfo.style.color = "white";
-      toggleButton.style.background = "none";
-      toggleButton.style.border = "white 1px solid";
-      oklchL.textContent = ``;
-      oklchC.textContent = ``;
-      oklchH.textContent = ``;
+      oklchElement.forEach((element) => {
+        element.style.color = "";
+      });
+      toggleButton.style.background = "";
+      toggleButton.style.border = "";
+      oklchL.textContent = `100%`;
+      oklchC.textContent = `0`;
+      oklchH.textContent = `0`;
     }
   }
 
   content.addEventListener("scroll", changeOklchVal);
 
   toggleButton.addEventListener("click", () => {
+    content.classList.toggle("hide-scroll");
     wrapper.classList.toggle("inactive");
     changeOklchVal();
     toggleButton.textContent =

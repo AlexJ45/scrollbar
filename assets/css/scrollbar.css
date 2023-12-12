@@ -1,18 +1,29 @@
+.element-oklch {
+  color: var(--scrollbar-background);
+}
 .info-oklch {
   font-size: 1rem;
+  color: var(--white-font);
+}
+.hide-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scroll::-webkit-scrollbar {
+  display: none;
 }
 .button--toggle {
   padding: 0.5rem 1rem;
   background: none;
-  color: white;
-  border: 1px solid white;
+  color: var(--white-font);
+  border: 1px solid var(--white-font);
   font-size: 1rem;
   font-weight: 400;
   word-wrap: break-word;
 }
 .scrollbar-wrapper {
   position: absolute;
-  right: 3%;
+  right: 5%;
   transition: all 0.3s ease-in-out;
   top: 0;
 }
@@ -32,8 +43,9 @@
   animation-timeline: --scrollBar;
   animation-duration: 1ms;
   transition: ease-in-out;
-  background-color: white;
+  background-color: var(--white-font);
 }
+
 @keyframes growAndColorChange {
   0% {
     height: 0;
@@ -42,8 +54,26 @@
   50% {
     background-color: oklch(88.24% 0.197 97.41);
   }
+
   100% {
     height: 100%;
     background-color: oklch(75.29% 0.332 145.06);
   }
+  /*  0% {
+    height: 0;
+    background-color: oklch(62.35% 0.276 29.2338851923426);
+  }
+  25% {
+    background-color: oklch(88.24% 0.197 97.41);
+  }
+  50% {
+    background-color: oklch(75.29% 0.332 145.06);
+  }
+  75% {
+    background-color: oklch(75.29% 0.332 214.155);
+  }
+  100% {
+    height: 100%;
+    background-color: oklch(75.29% 0.332 339.75);
+  } */
 }

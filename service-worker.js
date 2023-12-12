@@ -1,4 +1,4 @@
-self.addEventListener("install", (event) => {
+/* self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open("code-bar").then((cache) => {
       return cache.addAll(["/", "/index.html", "/manifest.json"]);
@@ -13,3 +13,4 @@ self.addEventListener("fetch", (event) => {
     })
   );
 });
+ */
