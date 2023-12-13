@@ -37,7 +37,21 @@ body {
 .codebar-title {
   font-family: var(--barcode);
 }
-
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.button--install {
+  padding: 0.5rem 1rem;
+  background: none;
+  color: var(--white-font);
+  border: 1px solid var(--white-font);
+  font-size: 1rem;
+  font-weight: 400;
+  word-wrap: break-word;
+  width: 100%;
+}
 .menu {
   display: flex;
   justify-content: space-evenly;
@@ -63,12 +77,19 @@ body {
   padding: 2rem 0;
   position: relative;
 }
+.text p {
+  width: 100%;
+}
+
 .text p:nth-child(odd) {
   text-align: left;
 }
 
 .text p:nth-child(even) {
   text-align: right;
+}
+.text p:nth-child(1) {
+  text-align: center;
 }
 .text p:last-of-type {
   text-align: center;
@@ -126,13 +147,48 @@ a:hover {
   top: 65%;
   left: -50%;
 }
+.svg {
+  position: absolute;
+  height: 150px;
+  z-index: -1;
+  top: 85%;
+}
+.svg path {
+  animation-timeline: --scrollBar;
+  animation-name: svgOffset;
+  animation-duration: 1ms;
+  transition: ease-in-out;
+  stroke-width: 8px;
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+}
+
+@keyframes svgOffset {
+  0% {
+    stroke-dashoffset: 2000;
+  }
+  90% {
+    stroke-dashoffset: 2000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
 
 @keyframes circleChange2 {
-  70% {
+  0% {
     height: 75px;
     width: 75px;
   }
-  85% {
+  60% {
+    height: 75px;
+    width: 75px;
+  }
+  75% {
+    height: 75px;
+    width: 150%;
+  }
+  100% {
     height: 75px;
     width: 150%;
   }
@@ -142,7 +198,6 @@ a:hover {
     height: 200px;
     width: 200px;
   }
-
   50% {
     height: 200px;
     width: 200px;
@@ -151,7 +206,11 @@ a:hover {
     height: 75px;
     width: 75px;
   }
-  70% {
+  60% {
+    height: 75px;
+    width: 150%;
+  }
+  100% {
     height: 75px;
     width: 150%;
   }
@@ -162,10 +221,19 @@ a:hover {
     grid-column-gap: 3rem;
     grid-row-gap: 3rem;
   }
-  24% {
+  10% {
+    transform: rotate(50deg);
+    grid-column-gap: 3rem;
+    grid-row-gap: 3rem;
+  }
+  26% {
     grid-column-gap: 0;
   }
-  25% {
+  27% {
+    grid-row-gap: 0;
+    transform: rotate(130deg);
+  }
+  100% {
     grid-row-gap: 0;
     transform: rotate(130deg);
   }

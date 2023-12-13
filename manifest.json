@@ -3,7 +3,5 @@
   "short_name": "Code Bar",
   "description": "A short site for explain and use of new CSS additions.",
   "start_url": "/",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#000000"
+  "display": "standalone"
 }

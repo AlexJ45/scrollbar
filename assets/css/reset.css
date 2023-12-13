@@ -87,6 +87,7 @@ h4,
 h5,
 h6 {
   width: fit-content;
+  word-break: keep-all;
 }
 a {
   text-decoration: none;

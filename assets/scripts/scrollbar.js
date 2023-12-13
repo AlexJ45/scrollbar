@@ -65,7 +65,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  content.addEventListener("scroll", changeOklchVal);
+  content.addEventListener("scroll", () => {
+    changeOklchVal();
+    const scrollTop = content.scrollTop;
+    const scrollHeight = content.scrollHeight - content.clientHeight;
+    const scrolled = (scrollTop / scrollHeight) * 100;
+    console.log("Scroll Percentage:", scrolled.toFixed(2) + "%");
+  });
 
   toggleButton.addEventListener("click", () => {
     content.classList.toggle("hide-scroll");
