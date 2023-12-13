@@ -21,7 +21,7 @@
       <info-oklch class="info-oklch element-oklch"></info-oklch>
       <h1 class="codebar-title">CODE BAR</h1>
       <div class="buttons">
-        <button class="button--install">Installer</button>
+        <button class="button--install" id="pwaInstall">Installer</button>
         <toggle-button></toggle-button>
       </div>
     </header>
@@ -113,6 +113,50 @@
           la barre atteint 50%, une transition peut modifier les propriétés d'un
           autre élément.
         </p>
+        <div class="colorized-code">
+          <p>Voici un extrait de code :</p>
+          <pre>
+&lt;style&gt;
+<span class="tag">.container</span> {
+  <span class="property">overflow-y</span>: <span class="value">scroll</span>;
+  // Soyez sûr que le scroll est activé
+  <span class="property">scroll-timeline</span>: <span class="value">--scrollTimeline y</span>;
+  // Définissez quel nom pour votre timeline et quel axe
+  <span class="property">scroll-timeline</span>: <span class="value">--scrollTimeline vertical</span>; 
+  // Obligatoire sur Mozilla
+}
+  <span class="tag">.element</span> {
+    <span class="property">animation-name</span>: <span class="value">animation</span>;
+    // Choississez une animation
+    <span class="property">animation-timeline</span>: <span class="value">--scrollTimeline</span>;
+    // Choississez une timeline
+    <span class="property">animation-duration</span>: <span class="value">1ms</span>;
+    // Obligatoire sur Mozilla
+  }
+
+  @<span class="rule">keyframes</span> <span class="value">animation</span> {
+    <span class="percent">0%</span> {
+      <span class="property">color</span>: <span class="value">red</span>;
+    }
+    <span class="percent">100%</span> {
+      <span class="property">color</span>: <span class="value">green</span>;
+    }
+  }
+&lt;/style&gt;
+</pre>
+          <p>
+            Précision : Cette fonctionnalité est présente
+            <a
+              href="https://caniuse.com/mdn-css_properties_scroll-timeline"
+              target="_blank"
+            >
+              sur 66% des navigateur
+            </a>
+            sauf Safari et Mozilla ou il faut activer un flag. Pour le faire il
+            faut saisissez "about:config" dans la barre d'url de Firefox.
+            Trouvez layout.css.scroll-driven-animations.enabled et activez le.
+          </p>
+        </div>
         <p>
           Ces animations réagissent dynamiquement au défilement de la page,
           offrant une expérience utilisateur interactive et captivante. En

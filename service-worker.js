@@ -1,20 +1,18 @@
-const networkFirst = async ({ request, fallbackUrl }) => {
+
+
+
+const cacheFirst = async ({ request, fallbackUrl }) => {
+  const responseFromCache = await caches.match(request);
+  if (responseFromCache) {
+    return responseFromCache;
+  }
   try {
     const responseFromNetwork = await fetch(request);
     const cache = await caches.open("cache");
-
     await cache.put(request, responseFromNetwork.clone());
-
     return responseFromNetwork;
   } catch (error) {
-    const responseFromCache = await caches.match(request);
-
-    if (responseFromCache) {
-      return responseFromCache;
-    }
-
     const fallbackResponse = await caches.match(fallbackUrl);
-
     if (fallbackResponse) {
       return fallbackResponse;
     }
@@ -25,3 +23,12 @@ const networkFirst = async ({ request, fallbackUrl }) => {
     });
   }
 };
+
+self.addEventListener("fetch", (event) => {
+  event.respondWith(
+    cacheFirst({
+      request: event.request,
+      fallbackUrl: "/",
+    })
+  );
+});
