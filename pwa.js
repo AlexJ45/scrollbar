@@ -56,13 +56,23 @@ function sendSubscriptionToServer(subscription) {
       }
     })
     .catch((error) => {
-      console.error(
-        error
-      );
+      console.error(error);
     });
 }
 
-registerServiceWorker();
+if (Notification.permission === "granted") {
+  registerServiceWorker();
+} else if (Notification.permission !== "denied") {
+  Notification.requestPermission().then((permission) => {
+    if (permission === "granted") {
+      registerServiceWorker();
+    } else {
+      console.log(
+        "L'utilisateur a refusé l'autorisation pour les notifications push."
+      );
+    }
+  });
+}
 
 let installPrompt;
 const pwaInstallButton = document.querySelector(".button--install");
