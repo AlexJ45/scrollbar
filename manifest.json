@@ -1,7 +1,7 @@
 {
   "name": "Code Bar",
   "short_name": "Code Bar",
-  "description": "A short site for explain and use of new CSS additions.",
+  "description": "A short site for explainations and use of new CSS additions.",
   "start_url": "/",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
