@@ -36,8 +36,7 @@ Bienvenue dans l'application CODE BAR ! Cette application explore les animations
 
 ## Remarques
 
-- L'application offre une expérience utilisateur interactive et captivante en réagissant dynamiquement au défilement de la page.
-- Félicitations pour avoir exploré les animations basées sur le défilement et les CSS scroll-driven !
+- Attention aux personnes épileptiques ce site contient des flashs de couleurs vives.
 - Veuillez noter que certaines fonctionnalités peuvent nécessiter l'activation de flag sur certains navigateurs. Consultez les liens fournis pour obtenir des informations détaillées sur la compatibilité.
 
 ---
