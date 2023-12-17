@@ -19,7 +19,7 @@ Bienvenue dans l'application CODE BAR ! Cette application explore les animations
 
 - Le bouton d'installation ne fonctionne que sur navigateur PC (sous Chrome).
 - Pour installer l'application, cliquez sur le bouton "Installer" dans le menu.
-- Pour profiter pleinement de l'application, activez la fonctionnalité en cliquant sur le bouton "Activer".
+- Pour profiter pleinement de l'application, activez la fonctionnalité en cliquant sur le bouton "Activer" et passez sous format téléphone (F12).
 
 ## Compatibilité
 
