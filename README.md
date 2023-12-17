@@ -1,6 +1,6 @@
 # README - Application CODE BAR
 
-Bienvenue dans l'application CODE BAR ! Cette application explore les animations basées sur le défilement et les CSS scroll-driven. Plongeons ensemble dans les mécanismes de la propriété scroll-timeline, où chaque pourcentage de défilement devient un marqueur pour des transformations dynamiques.
+Bienvenue dans l'application CODE BAR ! Cette application explore les animations basées sur le défilement et les CSS scroll-driven. Plongeons ensemble dans les mécanismes de la propriété scroll-timeline !
 
 ## Structure du Projet
 
@@ -17,12 +17,13 @@ Bienvenue dans l'application CODE BAR ! Cette application explore les animations
 
 ## Installation
 
+- Le bouton d'installation ne fonctionne que sur navigateur PC (sous Chrome).
 - Pour installer l'application, cliquez sur le bouton "Installer" dans le menu.
 - Pour profiter pleinement de l'application, activez la fonctionnalité en cliquant sur le bouton "Activer".
 
 ## Compatibilité
 
-- Cette fonctionnalité est présente sur 66 % des navigateurs, sauf Safari et Mozilla, où il faut activer un flag. Pour activer la fonctionnalité sur Mozilla, saisissez "about:config" dans la barre d'URL de Firefox, trouvez `layout.css.scroll-driven-animations.enabled` et activez-le.
+- Ca fonctionnalité principale est présente sur 66 % des navigateurs, sauf Safari et Mozilla, où il faut activer un flag. Pour activer la fonctionnalité sur Mozilla, saisissez "about:config" dans la barre d'URL de Firefox, trouvez `layout.css.scroll-driven-animations.enabled` et activez-le.
 
 ## Exemple de Code
 
@@ -37,6 +38,6 @@ Bienvenue dans l'application CODE BAR ! Cette application explore les animations
 
 - L'application offre une expérience utilisateur interactive et captivante en réagissant dynamiquement au défilement de la page.
 - Félicitations pour avoir exploré les animations basées sur le défilement et les CSS scroll-driven !
-- Veuillez noter que certaines fonctionnalités peuvent nécessiter l'activation de drapeaux sur certains navigateurs. Consultez les liens fournis pour obtenir des informations détaillées sur la compatibilité.
+- Veuillez noter que certaines fonctionnalités peuvent nécessiter l'activation de flag sur certains navigateurs. Consultez les liens fournis pour obtenir des informations détaillées sur la compatibilité.
 
 ---
